@@ -1,4 +1,4 @@
-﻿<Window x:Class="Koffiezetapparaat.MainWindow"
+﻿<Window x:Class="Koffiezetapparaat.App.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -6,15 +6,15 @@
         xmlns:local="clr-namespace:Koffiezetapparaat"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
+    <Grid x:Name="DisplayGrid">
         <Button Content="Cafe Creme" HorizontalAlignment="Left" Height="29" Margin="270,142,0,0" VerticalAlignment="Top" Width="103" RenderTransformOrigin="0.5,0.5">
 
         </Button>
         <Border Margin="10,10,10,302" Background="Black">
-            <TextBlock TextWrapping="Wrap" Text="Meldingen hier!" Foreground="#FF4BA4B2" VerticalAlignment="Center" TextAlignment="Center" FontFamily="Courier New" FontSize="24"/>
+            <TextBlock TextWrapping="Wrap" Text="{Binding Melding}" Foreground="#FF4BA4B2" VerticalAlignment="Center" TextAlignment="Center" FontFamily="Courier New" FontSize="24"/>
         </Border>
         <Button Content="Espresso" HorizontalAlignment="Right" Height="29" Margin="0,142,270,0" VerticalAlignment="Top" Width="104" RenderTransformOrigin="0.5,0.5">
         </Button>
-        <Button Content="Thee" HorizontalAlignment="Right" Height="29" Margin="0,294,270,0" VerticalAlignment="Top" Width="104" RenderTransformOrigin="0.5,0.5"/>
+        <Button x:Name="btnThee" Content="Thee" HorizontalAlignment="Right" Height="29" Margin="0,294,270,0" VerticalAlignment="Top" Width="104" RenderTransformOrigin="0.5,0.5" Click="TheeClick"/>
     </Grid>
 </Window>
