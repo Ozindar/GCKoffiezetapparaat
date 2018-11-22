@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28306.52
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Koffiezetapparaat.Classes", "Koffiezetapparaat.Classes\Koffiezetapparaat.Classes.csproj", "{605DA91A-5074-43FF-927E-76D93F358236}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GCKoffiezetapparaat.Classes", "GCKoffiezetapparaat.Classes\GCKoffiezetapparaat.Classes.csproj", "{605DA91A-5074-43FF-927E-76D93F358236}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Koffiezetapparaat.App", "Koffiezetapparaat.App\Koffiezetapparaat.App.csproj", "{2CA357D3-151C-4E32-A97A-7438BDE581B0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GCKoffiezetapparaat", "GCKoffiezetapparaat\GCKoffiezetapparaat.csproj", "{2CA357D3-151C-4E32-A97A-7438BDE581B0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

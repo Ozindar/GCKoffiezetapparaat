@@ -7,8 +7,8 @@
     <ProjectGuid>{605DA91A-5074-43FF-927E-76D93F358236}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Koffiezetapparaat.Classes</RootNamespace>
-    <AssemblyName>Koffiezetapparaat.Classes</AssemblyName>
+    <RootNamespace>GC.Koffiezetapparaat.Classes</RootNamespace>
+    <AssemblyName>GC.Koffiezetapparaat.Classes</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -43,9 +43,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IKoffiezetterDisplay.cs" />
+    <Compile Include="IWaterKoker.cs" />
+    <Compile Include="IWaterTap.cs" />
+    <Compile Include="Koffiezetapparaat.cs" />
     <Compile Include="KoffiezetterDisplay.cs" />
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Water.cs" />
+    <Compile Include="WaterKoker.cs" />
+    <Compile Include="WaterTap.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

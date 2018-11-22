@@ -1,4 +1,6 @@
-﻿namespace Koffiezetapparaat.Classes
+﻿using System.Threading.Tasks;
+
+namespace GC.Koffiezetapparaat.Classes
 {
     public interface IKoffiezetterDisplay
     {

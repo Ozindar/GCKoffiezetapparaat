@@ -1,13 +1,12 @@
-﻿using System;
-using System.Collections;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using System.Threading.Tasks;
 
-namespace Koffiezetapparaat.Classes
+namespace GC.Koffiezetapparaat.Classes
 {
     public class KoffiezetterDisplay : IKoffiezetterDisplay, INotifyPropertyChanged
     {
-    
+        public event PropertyChangedEventHandler PropertyChanged;
 
         public KoffiezetterDisplay()
         {
@@ -17,10 +16,7 @@ namespace Koffiezetapparaat.Classes
         private string _melding;
         public string Melding
         {
-            get
-            {
-                return _melding;
-            }
+            get => _melding;
             set
             {
                 _melding = value;
@@ -31,10 +27,7 @@ namespace Koffiezetapparaat.Classes
         public void ToonMelding(string melding)
         {
             Melding = melding;
-            
         }
-
-        public event PropertyChangedEventHandler PropertyChanged;
 
         private void NotifyPropertyChanged([CallerMemberName] string propertyName = "")
         {
