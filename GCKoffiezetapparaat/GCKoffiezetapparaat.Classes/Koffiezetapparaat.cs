@@ -1,6 +1,4 @@
-﻿using System.Threading.Tasks;
-
-namespace GC.Koffiezetapparaat.Classes
+﻿namespace GC.Koffiezetapparaat.Classes
 {
     public class Koffiezetter
     {
@@ -19,7 +17,10 @@ namespace GC.Koffiezetapparaat.Classes
         {
             _display.ToonMelding("Thee wordt gemaakt!");
 
+            _display.ToonMelding("Water tappen!");
             var water = _waterTap.GeefWater(500);
+    
+            _display.ToonMelding("Water koken!");
             water = _waterkoker.Kook(water);
 
             _display.ToonMelding("Thee is gemaakt!");

@@ -1,15 +1,17 @@
-﻿using System.ComponentModel;
-using System.Runtime.CompilerServices;
-using System.Threading.Tasks;
+﻿using System;
+using System.ComponentModel;
 
 namespace GC.Koffiezetapparaat.Classes
 {
     public class KoffiezetterDisplay : IKoffiezetterDisplay, INotifyPropertyChanged
     {
+        private readonly Action<string> _reportFunc;
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public KoffiezetterDisplay()
+        public KoffiezetterDisplay(Action<string> reportFunc)
         {
+            _reportFunc = reportFunc;
+
             ToonMelding("Initialiseren...");
         }
 
@@ -20,18 +22,13 @@ namespace GC.Koffiezetapparaat.Classes
             set
             {
                 _melding = value;
-                NotifyPropertyChanged();
+                _reportFunc(value);
             }
         }
 
         public void ToonMelding(string melding)
         {
             Melding = melding;
-        }
-
-        private void NotifyPropertyChanged([CallerMemberName] string propertyName = "")
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

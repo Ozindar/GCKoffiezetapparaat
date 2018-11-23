@@ -1,6 +1,8 @@
-﻿using System.Threading;
+﻿using System;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls;
 using GC.Koffiezetapparaat.Classes;
 
 namespace GC.Koffiezetapparaat.App
@@ -12,8 +14,7 @@ namespace GC.Koffiezetapparaat.App
         public MainWindow()
         {
             InitializeComponent();
-
-            var koffiezetterDisplay = new KoffiezetterDisplay();
+            var koffiezetterDisplay = new KoffiezetterDisplay(ReportFunc);
             DisplayGrid.DataContext = koffiezetterDisplay;
 
             var waterTap = new WaterTap();
@@ -21,9 +22,19 @@ namespace GC.Koffiezetapparaat.App
             _koffiezetter = new Koffiezetter(koffiezetterDisplay, waterTap, waterKoker);
         }
 
+        private void ReportFunc(string melding)
+        {
+            void Action()
+            {
+                txtMelding.Text = melding;
+            }
+
+            Dispatcher.BeginInvoke((Action) Action);
+        }
+
         private async void TheeClick(object sender, RoutedEventArgs e)
         {
-            await Task.Run(() => _koffiezetter.MaakThee());
+            await Task.Run(() => _koffiezetter.MaakThee()).ConfigureAwait(false);
         }
     }
 }

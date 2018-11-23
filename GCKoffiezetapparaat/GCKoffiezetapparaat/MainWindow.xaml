@@ -11,7 +11,7 @@
 
         </Button>
         <Border Margin="10,10,10,302" Background="Black">
-            <TextBlock TextWrapping="Wrap" Text="{Binding Melding, UpdateSourceTrigger=PropertyChanged}" Foreground="#FF4BA4B2" VerticalAlignment="Center" TextAlignment="Center" FontFamily="Courier New" FontSize="24"/>
+            <TextBlock x:Name="txtMelding" TextWrapping="Wrap" Foreground="#FF4BA4B2" VerticalAlignment="Center" TextAlignment="Center" FontFamily="Courier New" FontSize="24"/>
         </Border>
         <Button Content="Espresso" HorizontalAlignment="Right" Height="29" Margin="0,142,270,0" VerticalAlignment="Top" Width="104" RenderTransformOrigin="0.5,0.5">
         </Button>
