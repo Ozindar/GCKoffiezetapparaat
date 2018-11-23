@@ -1,6 +1,4 @@
-﻿using System.Dynamic;
-
-namespace GC.Koffiezetapparaat.Classes
+﻿namespace GC.Koffiezetapparaat.Classes
 {
     public interface IWaterTap
     {

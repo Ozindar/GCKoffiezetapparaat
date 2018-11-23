@@ -1,12 +1,10 @@
 ﻿using System;
-using System.ComponentModel;
 
 namespace GC.Koffiezetapparaat.Classes
 {
-    public class KoffiezetterDisplay : IKoffiezetterDisplay, INotifyPropertyChanged
+    public class KoffiezetterDisplay : IKoffiezetterDisplay
     {
         private readonly Action<string> _reportFunc;
-        public event PropertyChangedEventHandler PropertyChanged;
 
         public KoffiezetterDisplay(Action<string> reportFunc)
         {
