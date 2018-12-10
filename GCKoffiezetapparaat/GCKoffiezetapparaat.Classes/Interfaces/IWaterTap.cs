@@ -1,4 +1,4 @@
-﻿namespace GC.Koffiezetapparaat.Classes
+﻿namespace GC.Koffiezetapparaat.Classes.Interfaces
 {
     public interface IWaterTap
     {

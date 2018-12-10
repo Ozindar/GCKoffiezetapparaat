@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace GC.Koffiezetapparaat.Classes
+namespace GC.Koffiezetapparaat.Classes.Interfaces
 {
     public interface IKoffiezetterDisplay
     {

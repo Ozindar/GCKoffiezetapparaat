@@ -1,4 +1,7 @@
-﻿namespace GC.Koffiezetapparaat.Classes
+﻿using System.Collections.Generic;
+using GC.Koffiezetapparaat.Classes.Interfaces;
+
+namespace GC.Koffiezetapparaat.Classes
 {
     public class Koffiezetter
     {
@@ -13,17 +16,34 @@
             _waterkoker = waterkoker;
         }
 
-        public void MaakThee()
+        public IList<IIngredient> MaakHeetWater()
         {
-            _display.ToonMelding("Thee wordt gemaakt!");
+            var ingredientenLijst = new List<IIngredient>();
+
+            _display.ToonMelding("Heet water wordt gemaakt!");
 
             _display.ToonMelding("Water tappen!");
             var water = _waterTap.GeefWater(500);
-    
+
             _display.ToonMelding("Water koken!");
             water = _waterkoker.Kook(water);
+            ingredientenLijst.Add(water);
 
-            _display.ToonMelding("Thee is gemaakt!");
+            _display.ToonMelding("Heet water is gemaakt!");
+
+            return ingredientenLijst;
+        }
+
+        public IList<IIngredient> MaakCafeCreme()
+        {
+            _display.ToonMelding("Cafe Creme kan niet nog niet gemaakt worden.");
+            return new List<IIngredient>();
+        }
+
+        public IList<IIngredient> MaakEspresso()
+        {
+            _display.ToonMelding("Espresso kan niet nog niet gemaakt worden.");
+            return new List<IIngredient>();
         }
     }
 }

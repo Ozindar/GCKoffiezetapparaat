@@ -1,9 +1,11 @@
 ﻿using System;
-using System.Threading;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
+using System.Windows.Input;
 using GC.Koffiezetapparaat.Classes;
+using GC.Koffiezetapparaat.Classes.Interfaces;
 
 namespace GC.Koffiezetapparaat.App
 {
@@ -32,9 +34,48 @@ namespace GC.Koffiezetapparaat.App
             Dispatcher.BeginInvoke((Action) Action);
         }
 
-        private async void TheeClick(object sender, RoutedEventArgs e)
+        private async void HeetWaterClick(object sender, RoutedEventArgs e)
         {
-            await Task.Run(() => _koffiezetter.MaakThee()).ConfigureAwait(false);
+            this.Cursor = Cursors.Wait;
+            PrintConsumptie(null);
+
+            var consumptie = await Task.Run(() => _koffiezetter.MaakHeetWater()).ConfigureAwait(true);
+
+            PrintConsumptie(consumptie);
+            this.Cursor = null;
+        }
+
+        private async void CafeCremeClick(object sender, RoutedEventArgs e)
+        {
+            this.Cursor = Cursors.Wait;
+            PrintConsumptie(null);
+
+            var consumptie = await Task.Run(() => _koffiezetter.MaakCafeCreme()).ConfigureAwait(true);
+
+            PrintConsumptie(consumptie);
+            this.Cursor = null;
+        }
+
+        private async void EspressoClick(object sender, RoutedEventArgs e)
+        {
+            this.Cursor = Cursors.Wait;
+            PrintConsumptie(null);
+
+            var consumptie = await Task.Run(() => _koffiezetter.MaakEspresso()).ConfigureAwait(true);
+
+            PrintConsumptie(consumptie);
+            this.Cursor = null;
+        }
+
+        private void PrintConsumptie(IList<IIngredient> ingredienten)
+        {
+            if (ingredienten == null || !ingredienten.Any())
+            {
+                txtConsumptie.Text = string.Empty;
+                return;
+            }
+
+            txtConsumptie.Text = string.Join(Environment.NewLine, ingredienten.Select(x => $"- {x.Hoeveelheid} {x.Eenheid} {x.Omschrijving}"));
         }
     }
 }

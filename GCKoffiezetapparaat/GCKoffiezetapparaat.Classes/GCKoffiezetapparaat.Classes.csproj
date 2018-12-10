@@ -36,9 +36,10 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IKoffiezetterDisplay.cs" />
-    <Compile Include="IWaterKoker.cs" />
-    <Compile Include="IWaterTap.cs" />
+    <Compile Include="Interfaces\IIngredient.cs" />
+    <Compile Include="Interfaces\IKoffiezetterDisplay.cs" />
+    <Compile Include="Interfaces\IWaterKoker.cs" />
+    <Compile Include="Interfaces\IWaterTap.cs" />
     <Compile Include="Koffiezetapparaat.cs" />
     <Compile Include="KoffiezetterDisplay.cs" />
     <Compile Include="Properties\Annotations.cs" />

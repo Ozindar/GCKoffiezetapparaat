@@ -1,4 +1,5 @@
 ﻿using System;
+using GC.Koffiezetapparaat.Classes.Interfaces;
 
 namespace GC.Koffiezetapparaat.Classes
 {

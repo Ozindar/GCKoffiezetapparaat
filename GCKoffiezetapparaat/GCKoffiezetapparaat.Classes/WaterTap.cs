@@ -1,4 +1,5 @@
 ﻿using System.Threading;
+using GC.Koffiezetapparaat.Classes.Interfaces;
 
 namespace GC.Koffiezetapparaat.Classes
 {
