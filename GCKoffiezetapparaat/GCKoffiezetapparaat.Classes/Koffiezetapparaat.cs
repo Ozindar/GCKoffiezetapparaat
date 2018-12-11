@@ -27,8 +27,8 @@ namespace GC.Koffiezetapparaat.Classes
 
             _display.ToonMelding("Water koken!");
             water = _waterkoker.Kook(water);
-            ingredientenLijst.Add(water);
 
+            ingredientenLijst.Add(water);
             _display.ToonMelding("Heet water is gemaakt!");
 
             return ingredientenLijst;
